@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 712px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 20px;
+}
+
+h1, h3 {
+    font-weight: unset;
+    margin: 10px;
+}
+
+wrapper {
+
+}
+
+#firstBox {
+    margin-top: 100px;
+}
+
+.box {
+    border: 2px dashed black;
+    margin: auto;
+    text-align: left;
+    margin-top: 75px;
+}
+
+#border1 {
+    width: 160px;
+}
+
+#border2 {
+    width: 60px;
+}
+
+.borderText {
+    position: relative;
+    top: -15px;
+    left: 65px;
+    background: white;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.text1, .experience {
+    padding: 0px 20px 20px;
+}
+
+.skillBox {
+    padding: 0px 20px;
+}
+
+.experience {
+    overflow: auto;
+}
+
+
+.expLeft, .expRight {
+    float: left;
+    width: 50%;
+}
+
+.expTitle {
+    font-weight: bold;
+}
+
+.skill {
+    display: inline-block;
+    margin-right: 45px;
+    margin-bottom: 20px;
+}
+
+img, .skillName {
+    float: left;
+}
+
+.skillName {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#aws {
+    padding-right: 44px;
+}
