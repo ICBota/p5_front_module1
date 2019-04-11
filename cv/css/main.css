@@ -30,9 +30,6 @@ h1, h3 {
         width: 0;
         background: red;
     }
-    25% {
-        width: 25%;
-    }
     50% {
         width: 50%;
         background: yellow;
@@ -46,9 +43,6 @@ h1, h3 {
 @keyframes nogressBar {
     0% {
         width: 100%;
-    }
-    25% {
-        width: 75%;
     }
     50% {
         width: 50%;
@@ -75,6 +69,7 @@ h1, h3 {
     height: 20px;
     float: left;
     animation: progressBar 2s infinite;
+    animation-timing-function: linear;
     position: relative;
     z-index: 3;
 }
@@ -85,6 +80,7 @@ h1, h3 {
     float: left;
     background: white;
     animation: nogressBar 2s infinite;
+    animation-timing-function: linear;
     position: relative;
     z-index: 2;
 }
