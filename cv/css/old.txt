@@ -2,13 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header>div {
-    text-align: center;
-    position: relative;
-}
+header div {
 
-header>div>div {
-    position: relative;
+    text-align: center
 }
 
 h1 {
@@ -25,86 +21,14 @@ h1, h3 {
     margin: 10px;
 }
 
-@keyframes progressBar {
-    0% {
-        width: 0;
-        background: red;
-    }
-    25% {
-        width: 25%;
-    }
-    50% {
-        width: 50%;
-        background: yellow;
-    }
-    100% {
-        width: 100%;
-        background: green;
-    }
-}
-
-@keyframes nogressBar {
-    0% {
-        width: 100%;
-    }
-    25% {
-        width: 75%;
-    }
-    50% {
-        width: 50%;
-    }
-    100% {
-        width: 0%;
-    
-    }
-}
-
-#progress {
-    width: 100px;
-    height: 20px;
-    margin: auto;
-    transition: width 0.5s;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#prog1 {
-    width: 0%;
-    height: 20px;
-    float: left;
-    animation: progressBar 2s infinite;
-    position: relative;
-    z-index: 3;
-}
-
-#prog2 {
-    width: 100%;
-    height: 20px;
-    float: left;
-    background: white;
-    animation: nogressBar 2s infinite;
-    position: relative;
-    z-index: 2;
-}
-
-h5 {
-    position: relative;
-    z-index: 1;
-}
-
 main {
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
     display: grid;
     grid-template: 
-                "header"
-                "about"
-                "exp"
-                "skills"
-                "footer"
+                "header header header header header" 100px
+                "about about exp exp skills"
     ;
     grid-row-gap: 50px;
     grid-column-gap: 50px;
@@ -115,16 +39,22 @@ header {
 }
 
 section {
+    transition: 0.5s;
     border: 2px dashed black;
     text-align: left;
     display: block;
     width: 100%;
 }
 
+section:not(:hover) {
+    transition: 0.5s;
+    
+}
+
 .borderText {
     position: relative;
     top: -15px;
-    left: 15px;
+    left: 65px;
     background: white;
     font-size: 20px;
     width: 100px;
@@ -163,13 +93,13 @@ section {
     padding: 0px 20px;
     display: grid;
     grid-template: repeat(7, 1fr) / 1fr;
+    grid-row-gap: 10%;
 }
 
 .skill {
     align-self: center;
     justify-self: center;
     transition: transform 0.5s;
-    margin: 20px 0;
 }
 
 #skJS, #skMDB {
@@ -185,16 +115,14 @@ img, .skillName {
     border: 1px solid black;
     transition: color 0.5s,
                 background 0.5s;
-    margin-left: 10px;
 }
 
 #sec1 {
     grid-area: about;
-    transition: 0.5s;
 }
 
 #sec1 .borderText {
-    transition: left 0.5s;
+    transition: transform 0.5s;
 } 
 
 #sec1 #halfBorder{
@@ -215,8 +143,8 @@ img, .skillName {
 }
 
 #sec1:hover .borderText {
-    transform: translate(-50%, 0);
-    left: 50%;
+    transform: translate(280px, 0px);
+    
 }
 
 #sec2 {
@@ -281,27 +209,27 @@ img, .skillName {
 .skill .tooltip {
     background: #028090;
     color: white;
+    font-size: 14px;
     padding: 5px;
     position: absolute;
     z-index: 5;
+    left: 120%;
+    top: -7px;
     border-radius: 5px;
     display: none;
-    top: 125%;
-        left: 5%;
-        font-size: 12px;
-        width: 100px;
+    width: 150px;
 }
 
 .tooltip::after {
     content: "";
     position: absolute;
+    top: 50%;
+    right: 100%;
     z-index: 1;
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    top: -9%;
-        left: 5%;
-        border-color: transparent transparent #028090 transparent;
+    border-color: transparent #028090 transparent transparent;
 }
 
 .skill:hover {
@@ -321,36 +249,75 @@ img, .skillName {
     border: 1px solid white;
 }
 
-footer {
-    grid-area: footer;
+@media only screen and (max-width: 800px) {
+
+
+    header, main {
+        width: 90%;
+    }
+
+    section {
+        font-size: 14px;
+    }
+
+    .borderText {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #sec1 {
+        text-align: center;
+    }
+
+    #sec1:hover .borderText {
+        transform: translateX(-50%);
+    }
+
+    .expRight {
+        text-align: center;
+    }
+
+    #sec3:hover .borderText {
+        transform: translateX(-50%) rotate(360deg);
+    }
+    
 }
 
-#socials {
-    display: flex;
-    justify-content: space-evenly;
-}
+@media only screen and (max-width: 550px) {
+    
+    
+    .skillBox {
+        grid-template: 75px 75px 75px / 26% 26% 26%;
+        grid-column-gap: 11%;
+    }
 
-#socials a {
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 10px;
-}
+    .skill .tooltip {
+        top: 125%;
+        left: 5%;
+        font-size: 12px;
+        width: 100px;
+    }
 
-@media screen and (min-width: 768px)    {
-    main {
-        grid-template: "header header header header" 100px
-                        "about about about skills"
-                        "exp exp exp skills"
-                        "footer footer footer footer"
-
+    .tooltip::after {
+        top: -9%;
+        left: 5%;
+        border-color: transparent transparent #028090 transparent;
     }
 }
 
-@media screen and (min-width: 1024px)   {
-    main {
-        grid-template: "header header header header header header header" 100px
-                        "about about about exp exp exp skills"
-                        
-                        "footer footer footer footer footer footer footer"
+@media only screen and (max-width: 450px) {
+    .skillBox {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-row-gap: 20px;
+        padding: 20px 0;
+    }    
+    .skill {
+        min-width: 0;
     }
+
+    
+
+    
+
 }
